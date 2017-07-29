@@ -1,2 +1,2 @@
-# JS-Lab
+# JS Lab
 JavaScript Lab &amp; Playground
