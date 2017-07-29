@@ -3,16 +3,6 @@ const debugView = setCodeView('debug');
 const topWell = document.getElementById('top-well');
 
 firstView({ manero: 'cara' });
-/*
-axios.get('https://swapi.co/api/people/1/')
-    .then(json => {
-        firstView(json.data)
-    })
-    .catch(err => {
-        console.log('Deu ruim aqui', JSON.stringify(err.toString()))
-        firstView({Erro: JSON.stringify(err.toString())})
-    })
-*/
 
 topWell.innerHTML = moment().format('LLLL');
 
@@ -31,6 +21,18 @@ const pipe = (...fns) => x => fns.reduce((y, f) => f(y), x);
 const g = n => n + 1;
 const f = n => n * 2;
 
+const wait = time => new Promise((resolve, reject) => setTimeout(
+    resolve,
+    time
+  )
+);
+
+wait(300)
+  .then(() => 20)
+  .then(g)
+  .then(f)
+  .then(value => console.log(value)); // 42
+
 const trace = label => value => {
   console.log(`${label}: ${value}`);
   return value;
@@ -44,11 +46,4 @@ const doStuffBetter = pipe(
 );
 doStuffBetter(5);
 
-debugView(`axios.get('https://swapi.co/api/people/1/')
-    .then(json => {
-        firstView(json.data)
-    })
-    .catch(err => {
-        console.log('Deu ruim aqui', JSON.stringify(err.toString()))
-        firstView({Erro: JSON.stringify(err.toString())})
-    })`);
+debugView(`const pipe = (...fns) => x => fns.reduce((y, f) => f(y), x);`);

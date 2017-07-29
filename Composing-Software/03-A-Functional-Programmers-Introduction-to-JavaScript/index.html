@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width">
     <link href="../../vendor/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../vendor/css/highlight.default.min.css">
-     <link rel="stylesheet" href="../../assets/css/custom-highlight.css"> 
+    <link rel="stylesheet" href="../../assets/css/custom-highlight.css">
+    <script src='../../vendor/js/babel.min.js'></script>
     <script src='../../vendor/js/browser-polyfill.min.js'></script>
     <script src="../../vendor/js/highlight.min.js"></script>
     <script src="../../vendor/js/moment.min.js"></script>
@@ -16,7 +17,7 @@
     <script src="../../vendor/js/rx.all.js"></script>
     <script src="../../vendor/js/rx.dom.js"></script>
 
-    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/utils.js" type="text/babel" data-presets="es2017,stage-0"></script>
     <title>JS Lab && Playground</title>
 </head>
 
@@ -24,7 +25,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3>Composing Software<br /><small><a href="https://medium.com/javascript-scene/composing-software-an-introduction-27b72500d6ea">An Introduction</a></small></h3>
+                <h3>Composing Software<br />
+                    <small>
+                        <a href="https://medium.com/javascript-scene/a-functional-programmers-introduction-to-javascript-composing-software-d670d14ede30">
+                            A Functional Programmer’s Introduction to JavaScript
+                        </a>
+                    </small>
+                </h3>
                 <div class="well" id="top-well"></div>
             </div>
         </div>
@@ -35,7 +42,7 @@
             </div>
         </div>
     </div>
-    <script src="scripts.js"></script>
+    <script src="scripts.js" type="text/babel" data-presets="es2017,stage-0"></script>
 </body>
 
 </html>
