@@ -1,8 +1,21 @@
 'use strict';
 
-const pipe = (...fns) => x => fns.reduce((y, f) => f(y), x);
+const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
 
-function buildHighlightElement (elementId) {
+const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);
+
+const wait = time => new Promise((resolve, reject) => setTimeout(
+    resolve,
+    time
+  )
+);
+
+// Tiny, recursive autocurry
+const curry = (f, arr = []) => 
+  (...args) => 
+    ( a => a.length === f.length ? f(...a) : curry(f, a))([...arr, ...args]);
+
+const buildHighlightElement = (elementId) => {
   /** DOM ELEMENTS */
   const mainDiv = document.getElementById(elementId);
 
@@ -16,7 +29,7 @@ function buildHighlightElement (elementId) {
   return codeEl;
 }
 
-function setJSONView (elementId) {
+const setJSONView = (elementId) => {
   const jsonObject = {
     nome: 'Paulo',
     sobrenome: 'Sorrentino'
@@ -29,7 +42,7 @@ function setJSONView (elementId) {
   };
 }
 
-function setCodeView (elementId) {
+const setCodeView = (elementId) => {
   return function (codeString) {
     const codeEl = buildHighlightElement(elementId);
     codeEl.innerHTML = codeString;

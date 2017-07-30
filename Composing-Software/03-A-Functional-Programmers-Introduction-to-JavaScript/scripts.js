@@ -48,3 +48,26 @@ const double = x => x * 2;
 debugView(double);
 
 const orZero = (n = 0) => n;
+
+const createUser = ({
+  name = 'Anonymous',
+  avatarThumbnail = '/avatars/anonymous.png'
+}) => ({
+  name,
+  avatarThumbnail
+});
+const george = createUser({
+  name: 'George',
+  avatarThumbnail: 'avatars/shades-emoji.png'
+});
+firstView(george);
+
+const shiftToLast = (head, ...tail) => [...tail, head];
+
+const highpass = cutoff => n => n >= cutoff;
+
+const gt4 = highpass(4);
+gt4(6); // true
+gt4(3); // false
+
+debugView([2, 4, 6].filter(gt4).map(double));
