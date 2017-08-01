@@ -1,8 +1,8 @@
 'use strict';
 
-const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
+// const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
 
-const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);
+// const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);
 
 const wait = time => new Promise((resolve, reject) => setTimeout(
     resolve,
@@ -11,9 +11,9 @@ const wait = time => new Promise((resolve, reject) => setTimeout(
 );
 
 // Tiny, recursive autocurry
-const curry = (f, arr = []) => 
-  (...args) => 
-    ( a => a.length === f.length ? f(...a) : curry(f, a))([...arr, ...args]);
+// const curry = (f, arr = []) => 
+//   (...args) => 
+//     ( a => a.length === f.length ? f(...a) : curry(f, a))([...arr, ...args]);
 
 const buildHighlightElement = (elementId) => {
   /** DOM ELEMENTS */
