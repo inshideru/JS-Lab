@@ -1,8 +1,9 @@
 const firstView = setJSONView('syntaxHighlight');
+const jsonView = addJSONView('syntaxHighlight');
 const debugView = setCodeView('debug');
 const topWell = document.getElementById('top-well');
 
-firstView({ manero: 'cara' });
+firstView({ manero: 'cara' }, 'Manero');
 
 topWell.innerHTML = moment().format('LLLL');
 
@@ -437,5 +438,10 @@ const invoiceJSON = {
 
 const finalOrderJSON = deepmerge.all([newOrderJSON, invoiceJSON, pickUpOrderJSON]);
 
-firstView(finalOrderJSON);
-debugView(deepmerge.all);
+jsonView(newOrderJSON, 'newOrderJSON');
+jsonView(invoiceJSON, 'invoiceJSON');
+jsonView(pickUpOrderJSON, 'pickUpOrderJSON');
+jsonView(finalOrderJSON, 'finalOrderJSON');
+debugView(deepmerge.all, 'deepmerge.all');
+
+console.log(newOrderJSON.toString());

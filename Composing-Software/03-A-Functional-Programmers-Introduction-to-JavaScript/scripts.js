@@ -1,4 +1,5 @@
 const firstView = setJSONView('syntaxHighlight');
+const jsonView = addJSONView('syntaxHighlight');
 const debugView = setCodeView('debug');
 const topWell = document.getElementById('top-well');
 
