@@ -1,0 +1,11 @@
+ @font-face {
+   font-family: 'Roboto';
+   src:  url('./Roboto-Regular.ttf') format('ttf');
+   font-style: normal;
+}
+
+.hello {
+  color: red;
+  font-family: 'Roboto';
+  background: url('./thumbs-up.png');
+}
