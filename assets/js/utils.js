@@ -34,35 +34,26 @@ const buildHighlightElement = (elementId) => {
 };
 
 const setJSONView = (elementId) => {
-  const jsonObject = {
-    nome: 'Paulo',
-    sobrenome: 'Sorrentino'
-  };
   const view = buildHighlightElement(elementId);
 
-  return function (object, title) {
+  return (object = {msg: 'Nenhum objeto foi fornecido.'} , title) => {
     view.msgTitle.innerText = title || '';
-    view.codeEl.innerHTML = JSON.stringify(object || jsonObject, null, 2);
+    view.codeEl.innerHTML = JSON.stringify(object, null, 2);
     hljs.highlightBlock(view.codeEl);
   };
 };
 
 const addJSONView = (elementId) => {
-  const jsonObject = {
-    nome: 'Paulo',
-    sobrenome: 'Sorrentino'
-  };
-
-  return function (object, title) {
+  return (object = {msg: 'Nenhum objeto foi fornecido.'} , title) => {
     const view = buildHighlightElement(elementId);
     view.msgTitle.innerText = title || '';
-    view.codeEl.innerHTML = JSON.stringify(object || jsonObject, null, 2);
+    view.codeEl.innerHTML = JSON.stringify(object, null, 2);
     hljs.highlightBlock(view.codeEl);
   };
 };
 
 const setCodeView = (elementId) => {
-  return function (codeString, title) {
+  return (codeString, title) => {
     const view = buildHighlightElement(elementId);
     view.msgTitle.innerText = title || '';
     view.codeEl.innerHTML = codeString;
