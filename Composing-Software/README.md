@@ -19,3 +19,5 @@ Arquivos criados durando o estudo da série de artigos de *Eric Elliott* em sua 
 [08 - JavaScript Factory Functions with ES6+](https://medium.com/javascript-scene/javascript-factory-functions-with-es6-4d224591a8b1)
 
 [09 - Why Composition is Harder with Classes](https://medium.com/javascript-scene/why-composition-is-harder-with-classes-c3e627dcd0aa)
+
+[10 - Composable Datatypes with Functions](https://medium.com/javascript-scene/composable-datatypes-with-functions-aec72db3b093)
